@@ -71,7 +71,30 @@ or the program is largely incomplete.
 #                   (e.g. {'computing': {'year': 1, 'grade': 87.5})
 
 
+class Student:
+    def __init__(self, courses):
+        self.courses = dict(courses)
 
+    def add_course(self, course_name, year, grade):
+        self.course_name = input("Course name: ")
+        self.year = int(input("Year: "))
+        self.grade = float(input("Grade: ")) or "None"
+        keys_list = []
+        for i in self.course.keys():
+            keys_list.append(i)
+        if course_name not in keys_list:
+            self.courses[course_name] = {"year": year, "grade": grade}    
+        else:
+            while True:
+                answer = input("Do you wish to change the exisiting course?")
+                if answer != "yes" or "y" or "no" or "n":
+                    answer = input("Do you wish to change the exisiting course?")
+                elif answer == "yes" or "y":
+                    self.courses[course_name] = {"year": year, "grade": grade}
+                    if grade == "None":
+                        grade = input("Please input a grade: ")
+                elif answer == "no" or "n":
+                    pass      
 
 # Create a method called add_course(). It should:
 #   - have 3 parameters: 'course_name', 'year' and grade
@@ -83,6 +106,21 @@ or the program is largely incomplete.
 #           keep asking the question until the user inputs either yes/y or no/n
 #        - if the course does not already exist in the dictionary, add a new entry
 
+    def change_grade(self, course, grade):
+        course = input()
+        year = int(input())
+        grade = int(input())
+        if course in self.courses.keys():
+            self.grade = grade
+        if course not in self.courses.keys():
+            while True:
+                print("This course is not in the dictionary, would you like to add it?")
+                answer = input()
+                if answer == "yes" or "y":
+                    self.courses[course] = {"year": year, "grade": grade}
+                elif answer == "no" or "n":
+                    pass
+                
 
 # Create a method called change_grade(). It should:
 #   - have 2 parameters: 'course', grade
@@ -93,7 +131,26 @@ or the program is largely incomplete.
 #          if the user writes "no" or "n", ignore it. 
 #           keep asking the question until the user inputs either yes/y or no/n
 
+    def calculate_mean(self, year):
+        list1 = ()
+        self.grade = grade
+        year_or_courses = input("What courses/ years do you wish to calculate an average of? ")
+        for x in year_or_courses:
+            if type(x) == int:
+                for year in self.courses.values():
+                    if year == year_or_courses:
+                        # ask if this is the VALUE year or the key?
+                        list1.append(self.courses.values[grade])
+                        # How do I select the corresponding grade once I've found the right year?
+                sum(list1)/len(list1) = mean_grade
+                print(mean_grade)  
 
+
+
+                        
+            elif type(x) == str:
+
+                        
 
 # Create a method called calculate_mean(). It should: 
 #   - have one parameter, either a list of strings or a year (from 1 to 4):

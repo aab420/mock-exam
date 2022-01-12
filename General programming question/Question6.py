@@ -34,6 +34,17 @@ or the program is largely incomplete.
 # input dictionary whose values are all whole numbers (values, not keys).
 # # weight = 5 
 
-def value_greatest_even():
-    return 
+input_dict = {"key1" : 1, "key2" : 2, "key3" : 3, "key4" : 4, "key5" : 5}
 
+def value_greatest_even(dictionary):
+
+    count = 0
+    x = dictionary.values()
+    for i in x:
+         if i > count and i%2 == 0:
+             count = i         
+
+    return count
+
+ans = value_greatest_even(input_dict)
+print(ans)

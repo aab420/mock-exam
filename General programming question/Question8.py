@@ -46,8 +46,14 @@ or the program is largely incomplete.
 #
 # in which case the function would return True, if the character was "a" and false otherwise.
 # weight = 15
+import numpy as np
 
-def find_letter():
+matrix_list = input("Input a matrix in list form: ")
+character = input("Input a character: ")
+
+def find_letter(list, character):
+    array = np.array(list)
+     
     return
 
 

@@ -39,6 +39,59 @@ or the program is largely incomplete.
 #                            'jack and jill went up the'
 #       returns 'the jack cow and jumped jill over went the up moon the'
 # weight = 3
+input_sentence1 = 'the cow jumped over the moon'
+input_sentence2 = 'jack and jill went up the'
 
-def merge_sentences():
-    return 
+def merge_sentences(sentence1, sentence2):
+    list1 = [sentence1]
+    list2 = [sentence2]
+    list1 = ' '.join(list1).split() 
+    list2 = ' '.join(list2).split()
+    combined_list = []
+
+    if len(list1) != len(list2):
+        statement = print("The strings are of different lengths")
+        return statement
+    else:
+        while True:
+            try:
+                combined_list.append(list1.pop(0))
+                combined_list.append(list2.pop(0))
+            except IndexError:
+                break
+        sentence3 = ' '.join(combined_list)
+
+    return sentence3
+
+ans = merge_sentences(input_sentence1, input_sentence2)
+print(ans)
+
+'''
+input_sentence1 = 'the cow jumped over the moon'
+input_sentence2 = 'jack and jill went up the'
+
+def merge_sentences(sentence1, sentence2):
+    combined_list = []
+    list1 = [sentence1]
+    list2 = [sentence2]
+    list1 = ' '.join(list1).split() 
+    list2 = ' '.join(list2).split()
+    if len(list1) != len(list2):
+        print("The strings are of different lengths")
+        return None
+        #THIS IS WRONG
+    else:
+        for i in list1:
+            combined_list.append(i) 
+            i =+ 1    
+            for j in list2:
+                combined_list.append(j) 
+                j =+ 1  
+            #this doesnt work, it isn't iterating through list 2    
+            sentence3 = ' '.join(combined_list)
+
+    return sentence3
+
+ans = merge_sentences(input_sentence1, input_sentence2)
+print(ans)
+'''

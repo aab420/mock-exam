@@ -34,10 +34,21 @@ or the program is largely incomplete.
 # whose keys are all strings.
 # weight = 2
 
-def longest_key():
-    return 
+input_dict = {"key1" : "item1", "key2" : "item2", "long_key" : "item3"}
 
+def longest_key(dictionary):
 
+    length_count = 0
+    x = dictionary.keys()
+    for i in x:
+         if len(i) > length_count:
+            length_count = len(i)
+            longest_key = i  
+
+    return longest_key
+
+ans = longest_key(input_dict)
+print(ans)
 
 
 
